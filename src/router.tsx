@@ -1,6 +1,7 @@
 import Home from "./pages/Home";
 import { Router as RemixRouter } from "@remix-run/router/dist/router";
 import { createBrowserRouter } from "react-router-dom";
+import GeneralLayout from "./layout/GeneralLayout";
 
 interface RouterBase {
   id: number;
@@ -22,7 +23,7 @@ export const routers: RemixRouter = createBrowserRouter(
   routerData.map(router => {
     return {
       path: router.path,
-      element: router.element,
+      element: <GeneralLayout>{router.element}</GeneralLayout>,
     };
   })
 );
